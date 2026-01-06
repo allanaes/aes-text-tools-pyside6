@@ -1,0 +1,13 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="icons">
+        <file alias="icon_app.png">icons/at-sign.png</file>
+        <file
+            alias="icon_paste.png"
+        >icons/actions/clipboard-paste-document-text.png</file>
+        <file alias="icon_copy.png">icons/actions/document-copy.png</file>
+        <file alias="icon_trim.png">icons/actions/blue-document-page.png</file>
+        <file alias="icon_clear.png">icons/actions/broom.png</file>
+        <file alias="icon_exit.png">icons/actions/cross-button.png</file>
+    </qresource>
+</RCC>
