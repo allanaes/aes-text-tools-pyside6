@@ -22,7 +22,7 @@ class TxtMode(Enum):
     NPWP_15_FORMAT = "mode_npwp_15_format"
     NPWP_16 = "mode_npwp_16"
     NPWP_9_6 = "mode_npwp_9_6"
-    NITKU_PUSAT = "mode_nitku_pusat"
+    NPWP_16_TO_15 = "mode_16_to_15"
 
 
 class NPWPFormatter(QWidget):
@@ -103,9 +103,9 @@ class NPWPFormatter(QWidget):
             0,
         )
 
-        result_grid_layout.addWidget(QLabel("NITKU Pusat:"), 4, 2)
+        result_grid_layout.addWidget(QLabel("NPWP 16 to 15:"), 4, 2)
         result_grid_layout.addLayout(
-            self.create_txt_btn_layout(TxtMode.NITKU_PUSAT), 5, 2
+            self.create_txt_btn_layout(TxtMode.NPWP_16_TO_15), 5, 2
         )
 
         # Main Layout
@@ -169,5 +169,5 @@ class NPWPFormatter(QWidget):
                 return d.zfill(16) if d != "" else ""
             case TxtMode.NPWP_9_6:
                 return d[:9] + "-" + d[9:15] if d != "" else ""
-            case TxtMode.NITKU_PUSAT:
-                return d + "000000" if d != "" else ""
+            case TxtMode.NPWP_16_TO_15:
+                return d[1:16]
